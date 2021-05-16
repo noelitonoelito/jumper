@@ -6,6 +6,77 @@ continuously jumping character left and right to land on randomly placed,
 advancing platforms. If the character falls below the game stage, it is game
 over. The higher the user goes, the higher the score.
 
+== cloning repository
+
+If you clone this repository, there are a few files that may need to be changed
+to make sure that the application works correctly.
+
+* /index.html
+** Change the page name in the `title` element
++
+[source,html]
+----
+...
+<head>
+  <meta charset="utf-8">
+  <title>[NEW_APP_NAME]</title>
+  ...
+----
+** Change the following `link` element
++
+[source,html]
+----
+  <link rel="canonical" href="[NEW_URL_TO_APP_ROOT]" /> 
+----
+** Change the following `meta` elements
++
+[source,html]
+----
+  ...
+  <meta name="apple-mobile-web-app-title" content="[NEW_APP_NAME]">
+  <meta name="application-name" content="[NEW_APP_NAME]" />
+  ...
+----
+
+* /main.js
+** Change the following in the `registerServiceWorker` function
++
+[source,javascript]
+----
+  ...
+  function registerServiceWorker() {
+    navigator?.serviceWorker?.register(
+      "[NEW_SUBFOLDER_OR_REMOVE_IF_ROOT]/serviceWorker.js",
+      { scope: "[NEW_SUBFOLDER_OR_REMOVE_IF_ROOT]/" }
+    )
+  }
+  ...
+----
+
+* /manifest.json
+** Change the following properties
++
+[source,json]
+----
+{
+  "name": "[NEW_APP_NAME]",
+  "short_name": "[NEW_APP_NAME]",
+  ...
+  "scope": "[NEW_SUBFOLDER_OR_REMOVE_IF_ROOT]/",
+  ...
+}
+----
+
+* /serviceWorker.js
+** Change the following in the `registerServiceWorker` function
++
+[source,javascript]
+----
+...
+const APP_PREFIX = "[NEW_APP_NAME]"
+...
+----
+
 == code development
 
 This project was created using the free code editor
