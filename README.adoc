@@ -219,3 +219,4 @@ parallax effect._
 * [x] _Make game a PWA (progressive web app) that works in github pages._
 * [x] _Add Bob character_
 * [x] _Add game sounds_
+* [x] _Add Noelito character_
