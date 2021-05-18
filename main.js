@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     stageWidth = defaultStageWidth
     stageHeight = defaultStageHeight
     controlsHeight = 85
-    gameOptionsHeight = 160
+    gameOptionsHeight = 250
     gameOverHeight = 150
     gameConsole
     stage

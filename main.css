@@ -36,9 +36,9 @@ body {
   z-index: 5;
   position: absolute;
   top: 150px;
-  left: 65px;
-  width: 270px;
-  height: 160px;
+  left: 90px;
+  width: 210px;
+  height: 250px;
   background-color: #fa9dfdcc;
   border: 2px solid #000000;
   box-shadow: 0 0 4px 4px #0000004d;
@@ -48,8 +48,8 @@ body {
 }
 
 #gameOptions ul {
-  height: 110px;
-  margin: 0;
+  height: 160px;
+  margin: 0 0 20px;
   padding: 0;
   list-style: none;
   display: flex;
@@ -167,6 +167,14 @@ body {
   background-image: url(images/jumpers/bob-jumping.svg);
 }
 
+#jumper[data-character="noelito"] {
+  background-image: url(images/jumpers/noelito-standing.svg);
+}
+
+#jumper[data-character="noelito"].jumping {
+  background-image: url(images/jumpers/noelito-jumping.svg);
+}
+
 #jumper.flip {
   transform: scaleX(-1);
 }
@@ -224,6 +232,10 @@ body {
 
 #gameOver div[data-character="bob"] {
   background-image: url(images/jumpers/bob-icon.svg);
+}
+
+#gameOver div[data-character="noelito"] {
+  background-image: url(images/jumpers/noelito-icon.svg);
 }
 
 #playAgainButton {
