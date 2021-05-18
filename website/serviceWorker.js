@@ -3,7 +3,7 @@
 const APP_PREFIX = "jumper"
 // version of the off-line cache.
 //   change this value every time you want to update cache.
-const VERSION = "v0.22.0"
+const VERSION = "v0.23.0"
 const CACHE_NAME = `${APP_PREFIX}_${VERSION}`
 const URLS_TO_CACHE = [
   // use "/" instead of "/index.html"
@@ -24,6 +24,9 @@ const URLS_TO_CACHE = [
   `/${APP_PREFIX}/images/jumpers/caleb-icon.svg`,
   `/${APP_PREFIX}/images/jumpers/caleb-jumping.svg`,
   `/${APP_PREFIX}/images/jumpers/caleb-standing.svg`,
+  `/${APP_PREFIX}/images/jumpers/noelito-icon.svg`,
+  `/${APP_PREFIX}/images/jumpers/noelito-jumping.svg`,
+  `/${APP_PREFIX}/images/jumpers/noelito-standing.svg`,
   `/${APP_PREFIX}/images/jumpers/zobie-icon.svg`,
   `/${APP_PREFIX}/images/jumpers/zobie-jumping.svg`,
   `/${APP_PREFIX}/images/jumpers/zobie-standing.svg`,
