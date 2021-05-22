@@ -74,6 +74,7 @@ to make sure that the application works correctly.
 ----
 ...
 const APP_PREFIX = "[NEW_APP_NAME]"
+const SUBFOLDER = `[NEW_SUBFOLDER_OR_REMOVE_IF_ROOT]`
 ...
 ----
 
@@ -132,7 +133,9 @@ Used https://www.audacityteam.org/[Audacity]
 
 https://www.w3schools.com/jsref/dom_obj_audio.asp[HTML DOM Audio Object]
 
-== deploy to github pages
+
+== deploy
+=== github pages
 
 In VS Code's [Terminal] menu, click [Run Task...] and select
 [Publish to github pages].
@@ -144,6 +147,65 @@ project.
 ----
 git subtree push --prefix website origin gh-pages
 ----
+
+=== firebase
+==== setup and installation
+
+Firebase is a Google product that can be set up to host small applications for
+free. The following steps assume your already have
+https://docs.npmjs.com/downloading-and-installing-node-js-and-npm[nmp]
+installed. Also, you can follow these steps to setup Firebase hosting,
+but you may want to refer to the
+https://firebase.google.com/docs/hosting[official instructions] for the
+latest information. Alternatively, you can follow this
+https://medium.com/@aleemuddin13/how-to-host-static-website-on-firebase-hosting-for-free-9de8917bebf2[nice article] that also goes over steps to connect your site to a custom domain.
+
+. Install
++
+[source,sh]
+----
+npm install -g firebase-tools
+----
+
+. Authenticate with Firebase
++
+[source,sh]
+----
+firebase login
+----
+
+. Initialize project folder
++
+[source,sh]
+----
+firebase init
+----
+
+. What to put in Firebase init prompts (your settings my differ)
+.. Are you ready to proceed? - _Yes_
+.. Which Firebase CLI features do you want to set up for this folder? - 
+_Hosting: Configure and deploy Firebase Hosting sites_
+.. First, let's associate this project directory with a Firebase project.
+... Please select an option: _Create a new project_
+... Please specify a unique project id - _[CHOOSE_A_PROJECT_ID]_
+... What would you like to call your project? - _[CHOOSE_A_PROJECT_NAME]_
+.. What do you want to use as your public directory? - _website_
+.. Configure as a single-page app? - _y_
+.. File website/index.html already exists. Overwrite? - _n_
+.. Set up automatic builds and deploys with GitHub? _[UP_YOU_YOU]_
+
+==== run locally
+[source,sh]
+----
+firebase serve
+----
+
+==== deploy
+[source,sh]
+----
+firebase deploy
+----
+
 
 == pwa
 === image sizes needed

@@ -1,47 +1,48 @@
 // identifier for this app.
 //   this needs to be consistent across every cache update.
 const APP_PREFIX = "jumper"
+const SUBFOLDER = `${APP_PREFIX}`
 // version of the off-line cache.
 //   change this value every time you want to update cache.
-const VERSION = "v0.23.0"
+const VERSION = "v0.24.0"
 const CACHE_NAME = `${APP_PREFIX}_${VERSION}`
 const URLS_TO_CACHE = [
   // use "/" instead of "/index.html"
-  `/${APP_PREFIX}/`,
-  `/${APP_PREFIX}/main.css`,
-  `/${APP_PREFIX}/main.js`,
+  `${SUBFOLDER}/`,
+  `${SUBFOLDER}/main.css`,
+  `${SUBFOLDER}/main.js`,
 
-  `/${APP_PREFIX}/images/game-over.svg`,
+  `${SUBFOLDER}/images/game-over.svg`,
 
-  `/${APP_PREFIX}/images/controls/left.svg`,
-  `/${APP_PREFIX}/images/controls/play.svg`,
-  `/${APP_PREFIX}/images/controls/replay.svg`,
-  `/${APP_PREFIX}/images/controls/right.svg`,
+  `${SUBFOLDER}/images/controls/left.svg`,
+  `${SUBFOLDER}/images/controls/play.svg`,
+  `${SUBFOLDER}/images/controls/replay.svg`,
+  `${SUBFOLDER}/images/controls/right.svg`,
 
-  `/${APP_PREFIX}/images/jumpers/bob-icon.svg`,
-  `/${APP_PREFIX}/images/jumpers/bob-jumping.svg`,
-  `/${APP_PREFIX}/images/jumpers/bob-standing.svg`,
-  `/${APP_PREFIX}/images/jumpers/caleb-icon.svg`,
-  `/${APP_PREFIX}/images/jumpers/caleb-jumping.svg`,
-  `/${APP_PREFIX}/images/jumpers/caleb-standing.svg`,
-  `/${APP_PREFIX}/images/jumpers/noelito-icon.svg`,
-  `/${APP_PREFIX}/images/jumpers/noelito-jumping.svg`,
-  `/${APP_PREFIX}/images/jumpers/noelito-standing.svg`,
-  `/${APP_PREFIX}/images/jumpers/zobie-icon.svg`,
-  `/${APP_PREFIX}/images/jumpers/zobie-jumping.svg`,
-  `/${APP_PREFIX}/images/jumpers/zobie-standing.svg`,
+  `${SUBFOLDER}/images/jumpers/bob-icon.svg`,
+  `${SUBFOLDER}/images/jumpers/bob-jumping.svg`,
+  `${SUBFOLDER}/images/jumpers/bob-standing.svg`,
+  `${SUBFOLDER}/images/jumpers/caleb-icon.svg`,
+  `${SUBFOLDER}/images/jumpers/caleb-jumping.svg`,
+  `${SUBFOLDER}/images/jumpers/caleb-standing.svg`,
+  `${SUBFOLDER}/images/jumpers/noelito-icon.svg`,
+  `${SUBFOLDER}/images/jumpers/noelito-jumping.svg`,
+  `${SUBFOLDER}/images/jumpers/noelito-standing.svg`,
+  `${SUBFOLDER}/images/jumpers/zobie-icon.svg`,
+  `${SUBFOLDER}/images/jumpers/zobie-jumping.svg`,
+  `${SUBFOLDER}/images/jumpers/zobie-standing.svg`,
 
-  `/${APP_PREFIX}/images/platforms/basic.svg`,
+  `${SUBFOLDER}/images/platforms/basic.svg`,
 
-  `/${APP_PREFIX}/images/stages/clouds.svg`,
+  `${SUBFOLDER}/images/stages/clouds.svg`,
 
-  `/${APP_PREFIX}/sounds/background-music.mp3`,
-  `/${APP_PREFIX}/sounds/click.mp3`,
-  `/${APP_PREFIX}/sounds/game-over.mp3`,
-  `/${APP_PREFIX}/sounds/jump-1.mp3`,
-  `/${APP_PREFIX}/sounds/jump-2.mp3`,
-  `/${APP_PREFIX}/sounds/jump-3.mp3`,
-  `/${APP_PREFIX}/sounds/jump-4.mp3`
+  `${SUBFOLDER}/sounds/background-music.mp3`,
+  `${SUBFOLDER}/sounds/click.mp3`,
+  `${SUBFOLDER}/sounds/game-over.mp3`,
+  `${SUBFOLDER}/sounds/jump-1.mp3`,
+  `${SUBFOLDER}/sounds/jump-2.mp3`,
+  `${SUBFOLDER}/sounds/jump-3.mp3`,
+  `${SUBFOLDER}/sounds/jump-4.mp3`
 ]
 
 const PARTIAL_CONTENT = 206
@@ -51,6 +52,10 @@ function cacheResources(event) {
     caches.open(CACHE_NAME).then((cache) => {
       console.log("installing cache: " + CACHE_NAME)
       return cache.addAll(URLS_TO_CACHE)
+        .catch((error) => {
+          console.error("Caching failed:", error)
+          throw error
+        })
     })
   )
 }
@@ -85,7 +90,13 @@ function fromCacheElseFetch(event) {
         .then((cache) => cache.match(event.request.url))
         .then(async (res) => {
           if (res) { return res.arrayBuffer() }
-          return fetch(event.request).then(res => res.arrayBuffer())
+          return fetch(event.request)
+            .then(res => res.arrayBuffer())
+            .catch((error) => {
+              // 404 errors will NOT trigger an exception.
+              console.error("Fetching failed:", error)
+              throw error
+            })
         })
         .then((arrayBuffer) => {
           return new Response(
