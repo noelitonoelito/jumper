@@ -28,6 +28,7 @@ body {
   overflow: hidden;
   background-image: url(images/stages/clouds.svg);
   border: 2px solid #000000;
+  border-radius: 10px;
   box-shadow: inset 0 0 5px 5px #0000004d;
 }
 
@@ -38,8 +39,9 @@ body {
   left: 90px;
   width: 210px;
   height: 250px;
-  background-color: #fa9dfdcc;
-  border: 2px solid #000000;
+  background-color: #fa9dfd;
+  border: 3px solid #6d0470;
+  border-radius: 10px;
   box-shadow: 0 0 4px 4px #0000004d;
   display: none;
   flex-direction: column;
@@ -72,13 +74,18 @@ body {
   width: 50px;
   height: 50px;
   border: 0;
-  padding: 5px;
+  padding: 10px 5px 1px;
   margin: 5PX;
   background-color: #f64ffb;
-  border-radius: 25%;
+  border-radius: 10px;
   border: 2px solid #6d0470;
   text-align: center;
-  opacity: 0.7;
+  opacity: 0.6;
+}
+
+#gameOptions li label img {
+  width: 42px;
+  height: 42px;
 }
 
 #gameOptions li input[checked]+label {
@@ -89,11 +96,18 @@ body {
   opacity: 1;
 }
 
+#gameOptions li input[checked]+label img {
+  width: 50px;
+  height: 50px;
+}
+
 #playButton {
   height: 50px;
   font-weight: 900;
   font-size: 20px;
   border: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   padding: 10px;
   margin: 0;
   background-color: #f64ffb;
@@ -114,19 +128,23 @@ body {
 #controls button {
   width: 48%;
   height: 100%;
-  border: 0;
+  border: 4px solid #000000;
+  border-radius: 10px;
   margin: 0;
   padding: 0;
-  background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-#leftButton {
+#controls #leftButton {
+  background-color: #58c058;
+  border-color: #095309;
   background-image: url(images/controls/left.svg);
 }
 
-#rightButton {
+#controls #rightButton {
+  background-color: #6d8ee4;
+  border-color: #172a5f;
   background-image: url(images/controls/right.svg);
 }
 
@@ -185,7 +203,8 @@ body {
   min-width: 35px;
   top: 20px;
   right: 20px;
-  border: 2px solid #000000;
+  border: 3px solid #c07d00cc;
+  border-radius: 10px;
   padding: 2px;
   font-size: xx-large;
   background-color: #ffa600cc;
@@ -204,12 +223,13 @@ body {
   height: 150px;
   top: 250px;
   left: 110px;
-  border: 2px solid #000000;
+  border: 3px solid #6d0470;
+  border-radius: 10px;
   box-shadow: 0 0 4px 4px #0000004d;
   font-size: xx-large;
   font-weight: 900;
-  padding: 0 0 1px;
-  background-color: #fd5a5a;
+  padding: 0;
+  background-color: #fa9dfd;
 }
 
 #gameOver div {
@@ -241,9 +261,11 @@ body {
   width: 100%;
   height: 66px;
   border: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   margin: 0;
   padding: 0;
-  background-color: #c32121;
+  background-color: #f64ffb;
   background-image: url(images/controls/replay.svg);
   background-repeat: no-repeat;
   background-position: center;

@@ -10,11 +10,13 @@
 </rdf:RDF>
 </metadata>
 <g>
-<g transform="matrix(1.212 0 0 1.2104 -1.3994 -1.3928)" stroke="#660404" stroke-width=".82561">
-<path d="m5.3827 5.297 3.3569 1.3168-3.3569 1.3168 0.71969-1.3092z" fill="#660404" opacity=".997" stroke-width=".43689"/>
-<g transform="matrix(.97827 0 0 .97828 .13012 .14356)">
-<path transform="matrix(-.81462 -.58 .58006 -.81458 0 0)" d="m-4.1989-1.552a5.0269 5.0291 0 0 1 -4.1382 4.9499 5.0269 5.0291 0 0 1 -5.6014 -3.1997 5.0269 5.0291 0 0 1 2.1577 -6.0812 5.0269 5.0291 0 0 1 6.3643 1.0495" fill="none" stroke-linecap="round" stroke-width="1.1165"/>
-<path d="m3.3685 4.1198-1.624 0.74926 9.226e-4 -1.7414 0.53051 0.91691z" fill="#660404" opacity=".997" stroke-miterlimit="20" stroke-width=".44659"/>
+<g transform="matrix(1.212 0 0 1.2104 -1.3994 -1.3928)" stroke-width=".82561">
+<g fill="#6d0470">
+<g transform="matrix(.97827 0 0 .97828 .13012 .14356)" stroke-width=".84395">
+<path transform="matrix(-.81462 -.58 .58006 -.81458 0 0)" d="m-8.3184-7.0625c-1.2569-0.20727-2.5834 0.012739-3.7461 0.69922-2.3253 1.373-3.3361 4.2237-2.3965 6.7559 0.93958 2.5322 3.565 4.0323 6.2227 3.5547s4.5977-2.799 4.5977-5.5a0.55823 0.55823 0 0 0 -0.55859 -0.55664 0.55823 0.55823 0 0 0 -0.55859 0.55664c0 2.1681-1.5451 4.0172-3.6777 4.4004-2.1327 0.38324-4.2263-0.81123-4.9805-2.8437-0.75417-2.0325 0.05381-4.3044 1.9199-5.4063 1.8661-1.1018 4.2423-0.70922 5.6563 0.93359a0.55823 0.55823 0 0 0 0.78711 0.058594 0.55823 0.55823 0 0 0 0.058594 -0.78711c-0.88088-1.0234-2.0673-1.658-3.3242-1.8652z" color="#000000" color-rendering="auto" dominant-baseline="auto" fill-rule="evenodd" image-rendering="auto" shape-rendering="auto" solid-color="#000000" stop-color="#000000" style="font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;font-variation-settings:normal;inline-size:0;isolation:auto;mix-blend-mode:normal;shape-margin:0;shape-padding:0;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal"/>
+<path d="m4.2274 3.9701-2.7039 1.2475 0.0015361-2.8995 0.8833 1.5267z" opacity=".997"/>
+</g>
+<path d="m4.7424 4.7947 4.6375 1.8191-4.6375 1.8191 0.99425-1.8087z" opacity=".997"/>
 </g>
 </g>
 </g>
